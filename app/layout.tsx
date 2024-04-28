@@ -8,9 +8,9 @@ import { Toaster } from "sonner";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Suno Music Generator",
-  description: "Harness the power of suno.ai's music generation AI by leveraging its API to create captivating melodies.",
-  keywords: "Suno, Suno AI, Music Generator, Suno Music Generator",
+  title: "WAV Music Generator",
+  description: "Harness the power of WAV.ai's music generation AI by leveraging its API to create captivating melodies.",
+  keywords: "WAV, WAV AI, Music Generator, WAV Music Generator",
   creator: "Alvin-Liu",
 };
 
@@ -21,7 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" className="custom-gradient animate-gradient-x">
         <body className={inter.className}>
           <Toaster position="top-center" richColors />
 

@@ -4,7 +4,6 @@ import { useContext } from "react";
 import User from "@/components/user";
 import { usePathname } from "next/navigation";
 import { cs } from "@/utils";
-import Social from "../social";
 
 export interface Tab {
   title: string;
@@ -15,7 +14,6 @@ export interface Tab {
 const navigations: Tab[] = [
   { name: "home", title: "Home", url: "/" },
   { name: "explore", title: "Explore", url: "/explore" },
-  { name: "pricing", title: "Pricing", url: "/pricing" },
   { name: "personal", title: "Personal", url: "/personal" },
 ];
 
@@ -31,18 +29,18 @@ export default function () {
             <a href="/" className="text-xl font-medium flex items-center">
               <img
                 src="/logo.png"
-                className="w-39 h-20"
-                alt="Suno Music"
+                className="w-auto h-5 mr-3"
+                alt="WAV Music"
               />
+              <img src="/logo2.png" className="w-auto h-5" alt="WAV Music" />
             </a>
-
             <div className="hidden md:flex ml-16 flex-1 gap-x-10">
               {navigations.map((tab: Tab, idx: number) => (
                 <a
                   key={idx}
                   href={tab.url}
-                  className={cs("text-md font-medium leading-6 text-gray-900", {
-                    "text-primary": pathname === tab.url,
+                  className={cs("text-md font-medium leading-6 text-gray-500", {
+                    "text-secondary": pathname === tab.url,
                   })}
                 >
                   {tab.title}
@@ -51,9 +49,6 @@ export default function () {
             </div>
 
             <div className="flex flex-row items-center lg:flex lg:flex-row lg:space-x-3 lg:space-y-0">
-              <div className="hidden md:block mr-4">
-                <Social />
-              </div>
 
               {user === undefined ? (
                 <>loading...</>

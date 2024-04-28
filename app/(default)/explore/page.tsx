@@ -46,18 +46,19 @@ export default function () {
         {!!loading ? (
           <Loading />
         ) : (
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:grid-cols-3 lg:gap-12">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 md:grid-cols-4 lg:gap-12">
             {musicList && musicList.map((music: SunoMusicType, idx: number) => {
               return (
                 <div className="rounded-xl overflow-hidden inline-block border border-solid border-[#cdcdcd]" key={idx}>
-                  <div className="flex flex-col items-center justify-around h-full rounded-md bg-gradient-to-tr from-pink-400 to-yellow-400 p-4 font-mono text-xl text-white">
+                  <div className="flex flex-col items-center justify-around h-full rounded-md bg-gradient-to-tr font-mono text-sm text-black bg-white">
                     <div className="cover flex w-auto flex-col items-center">
-                      <img src={music.image_url} alt={music.title} className="w-3/6 rounded-xl blur-[2px]" />
-                      <p className="-translate-y-10 break-words text-center">{music.title}</p>
+                      <img src={music.image_url} alt={music.title} />
+                      
                     </div>
-                    <audio className="mx-auto block w-full max-w-md" controls preload="none">
+                    <div className="w-full bg-white p-3 font-bold"><span>{music.title}</span></div>
+                    <audio className="mx-auto h-6 w-full max-w-md" controls preload="none">
                       <source src={music.audio_url} type="audio/mpeg" />
-                    </audio>
+                    </audio> 
                   </div>
                 </div>
               );
